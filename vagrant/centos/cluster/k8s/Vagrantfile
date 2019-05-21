@@ -97,6 +97,7 @@ subjects:
   name: admin-user
   namespace: kube-system
 EOF
+kubectl apply -f cluster-role-binding.yaml
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
       SHELL
     end
